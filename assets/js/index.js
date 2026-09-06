@@ -78,8 +78,11 @@ let juegoIniciado = false;
 document.addEventListener("keydown", (event) => {
     // 👉 1. INICIAR EL JUEGO (popup inicial)
     if (!juegoIniciado 
-        && document.getElementById("popup").style.display !== "none"
-        && event.key === "Enter") {
+        // && document.getElementById("popup").style.display !== "none"
+        // && event.key === "Enter") 
+        
+        && window.getComputedStyle(document.getElementById("popup")).display !== "none"
+        && event.key === "Enter"){
         document.getElementById("popup").style.display = "none";
         juegoIniciado = true;
 
@@ -97,9 +100,10 @@ document.addEventListener("keydown", (event) => {
 
     // 👉 2. REINICIAR EL JUEGO (popup GAME OVER)
     if (!juegoIniciado 
-        && document.getElementById("gameOverPopup").style.display == "flex"
+        // && document.getElementById("gameOverPopup").style.display == "flex"
+        // && event.key === "Enter") {
+        && window.getComputedStyle(document.getElementById("gameOverPopup")).display === "flex"
         && event.key === "Enter") {
-
         location.reload();
     }
 });
