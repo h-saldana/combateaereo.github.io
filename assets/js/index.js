@@ -74,6 +74,10 @@ document.getElementById("btnShoot").addEventListener("touchstart", () => dispara
 
 
 let juegoIniciado = false;
+// para iniciar el juego
+window.focus();
+document.body.tabIndex = 0;
+document.body.focus();
 
 document.addEventListener("keydown", (event) => {
     // 👉 1. INICIAR EL JUEGO (popup inicial)
