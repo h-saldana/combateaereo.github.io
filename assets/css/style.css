@@ -1,0 +1,214 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    /* background-color: black; */
+    background-color: #87CEEB;
+
+}
+#gameCanvas {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+.avion {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.bala {
+    width: 5px;
+    height: 15px;
+    background-color: red;
+    position: absolute;
+    /* position: relative; */
+    
+}
+.enemigo {
+    width: 40px;
+    height: 40px;
+    background-color: blue;
+    position: absolute;
+    top: 0;
+}
+
+#popup {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+    z-index: 9999;
+}
+
+#gameOverPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 32px;
+    text-align: center;
+    z-index: 9999;
+}
+
+.cielo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0; /* detrás del canvas */
+}
+
+/* Todas las capas */
+.capa {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Nubes base */
+.nube {
+    position: absolute;
+    background: url('/assets/img/dark-cloud-shape-svgrepo-com.svg') no-repeat;
+    background-size: contain;
+    opacity: 0.8;
+    width: 200px;
+    height: 120px;
+    top: -150px;
+    animation: moverNube linear infinite;
+}
+
+/* Capa 1: grandes y lentas */
+.capa1 .nube {
+    width: 260px;
+    height: 150px;
+    animation-duration: 25s;
+    opacity: 0.5;
+}
+
+/* Capa 2: medianas */
+.capa2 .nube {
+    width: 200px;
+    height: 120px;
+    animation-duration: 18s;
+    opacity: 0.7;
+}
+
+/* Capa 3: pequeñas y rápidas */
+.capa3 .nube {
+    width: 140px;
+    height: 80px;
+    animation-duration: 12s;
+    opacity: 0.9;
+}
+
+/* Animación vertical */
+@keyframes moverNube {
+    0% { transform: translateY(-200px); }
+    100% { transform: translateY(120vh); }
+}
+
+/* Capa 1 */
+.capa1 .nube:nth-child(1) { left: 10%; }
+.capa1 .nube:nth-child(2) { left: 50%; animation-delay: 5s; }
+.capa1 .nube:nth-child(3) { left: 80%; animation-delay: 10s; }
+
+/* Capa 2 */
+.capa2 .nube:nth-child(1) { left: 20%; }
+.capa2 .nube:nth-child(2) { left: 60%; animation-delay: 3s; }
+.capa2 .nube:nth-child(3) { left: 90%; animation-delay: 7s; }
+
+/* Capa 3 */
+.capa3 .nube:nth-child(1) { left: 5%; }
+.capa3 .nube:nth-child(2) { left: 40%; animation-delay: 2s; }
+.capa3 .nube:nth-child(3) { left: 70%; animation-delay: 6s; }
+
+.controles-movil {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 40px;
+    z-index: 9999;
+    display: none; /* Oculto por defecto, se muestra en móviles */
+}
+
+@media (max-width: 900px) {
+    .avion {
+        width: 40px;
+        height: 40px;
+    }
+    .bala {
+        width: 4px;
+        height: 12px;
+    }
+    .enemigo {
+        width: 30px;
+        height: 30px;
+    }
+    #popup {
+        font-size: 18px;
+        padding: 10px;
+        
+        
+        
+    }
+
+    #gameOverPopup {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+
+    .controles-movil {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 120px;
+    z-index: 9999;
+    }
+
+    .flechas button {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+        border-radius: 10px;
+        border: none;
+        background: rgba(255,255,255,0.3);
+        color: white;
+    }
+
+    .medio {
+        display: flex;
+        gap: 10px;
+    }
+
+    .disparar {
+        width: 120px;
+        height: 120px;
+        font-size: 22px;
+        border-radius: 50%;
+        background: rgba(255,0,0,0.6);
+        color: white;
+        border: none;
+    }
+
+}

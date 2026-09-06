@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>Combate Aéreo</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <div id="popup">
+        <div>
+            <h2>Controles del Juego</h2>
+            <p>Para desplazarse utiliza:</p>
+            <p>⬆️ Arriba — ⬇️ Abajo — ⬅️ Izquierda — ➡️ Derecha</p>
+            <p>Para disparar utiliza la tecla <strong>Espaciadora</strong></p>
+            <br>
+            <p><em>Presiona ENTER para comenzar</em></p>
+        </div>
+    </div>
+
+    <!-- <div id="gameArea">
+        <img src="/assets/img/airplane-svgrepo-com.svg" class="avion" id="avion">
+    </div> -->
+
+    <div class="controles-movil">
+        <div class="flechas">
+            <button id="btnUp">⬆️</button>
+            <div class="medio">
+                <button id="btnLeft">⬅️</button>
+                <button id="btnRight">➡️</button>
+            </div>
+            <button id="btnDown">⬇️</button>
+        </div>
+    
+        <button id="btnShoot" class="disparar">🔥 Disparar</button>
+    </div>
+
+    
+
+
+    <canvas id="gameCanvas">
+        <img src="/assets/img/airplane-svgrepo-com.svg" class="avion" id="avion">
+    </canvas>
+
+    <!-- <div class="cielo">
+        <div class="nube nube1"><img src="/assets/img/dark-cloud-shape-svgrepo-com.svg" alt=""></div>
+        <div class="nube nube2"><img src="/assets/img/dark-cloud-shape-svgrepo-com.svg" alt=""></div>
+        <div class="nube nube3"><img src="/assets/img/dark-cloud-shape-svgrepo-com.svg" alt=""></div>
+    </div> -->
+
+    <div class="cielo">
+    <div class="capa capa1">
+        <div class="nube"></div>
+        <div class="nube"></div>
+        <div class="nube"></div>
+    </div>
+
+    <div class="capa capa2">
+        <div class="nube"></div>
+        <div class="nube"></div>
+        <div class="nube"></div>
+    </div>
+
+    <div class="capa capa3">
+        <div class="nube"></div>
+        <div class="nube"></div>
+        <div class="nube"></div>
+    </div>
+</div>
+
+
+
+    <div id="gameOverPopup">
+        <div>
+            <h1>GAME OVER</h1>
+            <p>Tu puntaje final: <span id="finalScore"></span></p>
+            <p><em>Presiona ENTER para reiniciar</em></p>
+        </div>
+    </div>
+
+
+    <script src="/assets/js/index.js"></script>
+</body>
+</html>
