@@ -42,13 +42,14 @@ imgEnemigo.src = "assets/img/airplane-black-shape-svgrepo-com.svg"; // Cambia po
 let avion = { x: canvas.width / 2, y: canvas.height - 50, width: 50, height: 50 };
 let balas = [];
 
-document.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowLeft") avion.x -= 20;
-    if (event.key === "ArrowRight") avion.x += 20;
-    if(event.key === "ArrowUp") avion.y -= 20;
-    if(event.key === "ArrowDown") avion.y += 20;
-    if (event.key === " ") disparar();
-});
+
+// document.addEventListener("keydown", (event) => {
+//     if (event.key === "ArrowLeft") avion.x -= 20;
+//     if (event.key === "ArrowRight") avion.x += 20;
+//     if(event.key === "ArrowUp") avion.y -= 20;
+//     if(event.key === "ArrowDown") avion.y += 20;
+//     if (event.key === " ") disparar();
+// });
 
 function disparar() {
     balas.push({ x: avion.x + avion.width / 2, y: avion.y, velocidadY: -5 });
@@ -100,6 +101,7 @@ document.addEventListener("keydown", (event) => {
         }, 1000);
 
         actualizar(); // iniciar el juego recién aquí
+        return;
     }
 
     // 👉 2. REINICIAR EL JUEGO (popup GAME OVER)
@@ -109,6 +111,15 @@ document.addEventListener("keydown", (event) => {
         && window.getComputedStyle(document.getElementById("gameOverPopup")).display === "flex"
         && event.key === "Enter") {
         location.reload();
+        return;
+    }
+    // CONTROLES DEL AVIÓN (solo si el juego está iniciado)
+    if (juegoIniciado) {
+        if (event.key === "ArrowLeft") avion.x -= 20;
+        if (event.key === "ArrowRight") avion.x += 20;
+        if (event.key === "ArrowUp") avion.y -= 20;
+        if (event.key === "ArrowDown") avion.y += 20;
+        if (event.key === " ") disparar();
     }
 });
 
