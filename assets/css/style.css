@@ -34,9 +34,11 @@ body {
 .avion {
     width: 50px;
     height: 50px;
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
+    background-color: green;
+    /* position: absolute; */
+    position: relative;
+    bottom: 100px;
+    left: 50%;    
     transform: translateX(-50%);
 }
 .bala {
@@ -194,6 +196,8 @@ body {
     .avion {
         width: 40px;
         height: 40px;
+        position: relative;
+        bottom: 100px;
     }
     .bala {
         width: 4px;
