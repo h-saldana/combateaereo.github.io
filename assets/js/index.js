@@ -44,7 +44,7 @@ imgEnemigo.src = "assets/img/airplane-black-shape-svgrepo-com.svg"; // Cambia po
 // posición del airplane.
 // let avion = { x: canvas.width / 2, y: canvas.height - 50, width: 50, height: 50 };
 
-let separacionInferior = window.innerWidth > 768 ? 180: 100;
+let separacionInferior = window.innerWidth > 768 ? 180: 200;
 let avion = { x: canvas.width / 2, y: canvas.height - separacionInferior, width: 50, height: 50 };
 
 let balas = [];
