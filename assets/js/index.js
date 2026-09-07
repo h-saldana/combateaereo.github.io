@@ -82,6 +82,29 @@ window.focus();
 document.body.tabIndex = 0;
 document.body.focus();
 
+function iniciarJuego() {
+    juegoIniciado = true;
+
+    intervaloTiempo = setInterval(() => {
+        tiempo--;
+        if (tiempo <= 0) {
+            tiempo = 0;
+            gameOver();
+        }
+    }, 1000);
+
+    actualizar();
+};
+
+//OCULTAR POPUP AL TOCAR LA PANTALLA (RESPONSIVE)
+
+document.getElementById("popup").addEventListener("touchstart", () => {
+    if (!juegoIniciado) {
+        document.getElementById("popup").style.display = "none";
+        iniciarJuego();
+    }
+});
+
 document.addEventListener("keydown", (event) => {
     // 👉 1. INICIAR EL JUEGO (popup inicial)
     if (!juegoIniciado 
@@ -91,21 +114,9 @@ document.addEventListener("keydown", (event) => {
         && window.getComputedStyle(document.getElementById("popup")).display !== "none"
         && event.key === "Enter"){
         document.getElementById("popup").style.display = "none";
-        juegoIniciado = true;
-
-         // ⏱️ Iniciar cuenta regresiva
-        intervaloTiempo = setInterval(() => {
-            tiempo--;
-            if (tiempo <= 0) {
-                tiempo = 0;
-                gameOver();
-            }
-        }, 1000);
-
-        actualizar(); // iniciar el juego recién aquí
-        return;
+        iniciarJuego();
+        return;       
     }
-
     // 👉 2. REINICIAR EL JUEGO (popup GAME OVER)
     if (!juegoIniciado 
         // && document.getElementById("gameOverPopup").style.display == "flex"
