@@ -12,13 +12,20 @@
 <body>
 
     <div id="popup">
-        <div>
+        <div id="text">
             <h2>Controles del Juego</h2>
             <p>Para desplazarse utiliza:</p>
             <p>⬆️ Arriba — ⬇️ Abajo — ⬅️ Izquierda — ➡️ Derecha</p>
             <p>Para disparar utiliza la tecla <strong>Espaciadora</strong></p>
             <br>
-            <p><em>Presiona ENTER para comenzar</em></p>
+            <!-- <p><em>Presiona ENTER para comenzar</em></p>
+            <p><em>Toca la PANTALLA comenzar</em></p>          -->
+            <!-- Desktop -->
+            <p id="msgEnter"><em>Presiona ENTER para comenzar</em></p>
+            
+            <!-- Responsive -->
+            <p id="msgTouch"><em>Toca la PANTALLA para comenzar</em></p>
+
         </div>
     </div>
 
@@ -77,8 +84,13 @@
     <div id="gameOverPopup">
         <div>
             <h1>GAME OVER</h1>
-            <p>Tu puntaje final: <span id="finalScore"></span></p>
-            <p><em>Presiona ENTER para reiniciar</em></p>
+            <p>Tu puntaje final: <span id="finalScore"></span></p>            
+            <!-- <p><em>Presiona ENTER para reiniciar</em></p>             -->
+             <!-- desktop -->
+            <p id="msgEnterGO"><em>Presiona ENTER para reiniciar</em></p>
+            <!-- responsive -->
+            <p id="msgTouchGO"><em>Toca la PANTALLA para reiniciar</em></p>
+
         </div>
     </div>
 

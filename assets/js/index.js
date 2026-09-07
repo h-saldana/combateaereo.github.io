@@ -227,6 +227,13 @@ function gameOver() {
     // Detener el juego
     juegoIniciado = false;
 }
+// Reiniciar tocando la pantalla en responsive
+document.getElementById("gameOverPopup").addEventListener("touchstart", () => {
+    if (!juegoIniciado) {
+        location.reload();
+    }
+});
+
 
 
 
