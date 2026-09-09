@@ -107,7 +107,7 @@ body {
 /* Nubes base */
 .nube {
     position: absolute;
-    background: url('/assets/img/dark-cloud-shape-svgrepo-com.svg') no-repeat;
+    background: url('/combateaereo.github.io/assets/img/dark-cloud-shape-svgrepo-com.svg') no-repeat;
     background-size: contain;
     opacity: 0.8;
     width: 200px;
